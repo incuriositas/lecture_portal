@@ -27,10 +27,7 @@ public class UserDao {
     }
 
     public void insert(User user) throws ClassNotFoundException, SQLException {
-        //mysql
-        //driver 로딩
         Connection connection = getConnection();
-        //query
         PreparedStatement preparedStatement = connection.prepareStatement("insert into userinfo (name,password) values (?,?)", Statement.RETURN_GENERATED_KEYS);
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getPassword());
