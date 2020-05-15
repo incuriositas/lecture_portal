@@ -20,10 +20,10 @@ public class DaoFactory {
     @Value("${db.password}")
     private String password;
 
-    @Bean // spring 이 new 해주는 object instance
-    public UserDao userDao() {
-        return new UserDao(jdbcContext());
-    }
+//    @Bean // spring 이 new 해주는 object instance
+//    public UserDao userDao() {
+//        return new UserDao(jdbcContext());
+//    }
 
     @Bean
     public JdbcTemplate jdbcContext() {
