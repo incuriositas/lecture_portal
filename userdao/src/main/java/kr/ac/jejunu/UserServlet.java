@@ -24,7 +24,8 @@ public class UserServlet extends GenericServlet {
 
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        User user = userDao.get(1);
+        System.out.println("*********** service **********");
+        User user = userDao.get(192);
 
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("<html>");
@@ -32,6 +33,7 @@ public class UserServlet extends GenericServlet {
         stringBuffer.append(String.format("Hello %s!!", user.getName()));
         stringBuffer.append("</h1>");
         stringBuffer.append("</html>");
+        res.setContentType("text/html;charset=UTF-8");
         res.getWriter().println(stringBuffer.toString());
     }
 }
