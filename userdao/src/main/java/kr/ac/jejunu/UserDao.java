@@ -1,6 +1,5 @@
 package kr.ac.jejunu;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -11,14 +10,14 @@ import java.sql.*;
 
 @Component
 public class UserDao {
-    @Autowired
+
     private JdbcTemplate jdbcTemplate;
 
-//    public UserDao(JdbcTemplate jdbcTemplate) {
-//        this.jdbcTemplate = jdbcTemplate;
-//    }
+    public UserDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
-    public User get(Integer id) throws SQLException {
+    public User get(Integer id) {
         Object[] params = new Object[] {id};
         String sql = "select id, name, password from userinfo where id = ?";
         return jdbcTemplate.query(sql, params, rs -> {
@@ -33,7 +32,7 @@ public class UserDao {
         });
     }
 
-    public void insert(User user) throws SQLException {
+    public void insert(User user) {
         Object[] params = new Object[] {user.getName(), user.getPassword()};
         String sql = "insert into userinfo (name,password) values (?,?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();

@@ -22,8 +22,8 @@ public class UserDaoTests {
     private static UserDao userDao;
 
     @BeforeAll
-    public static void setup(){
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("kr.ac.jejunu");
+    public static void setup() throws ClassNotFoundException{
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("kr.ac.jejunu");
 //        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("daoFactory.xml");
 //        ApplicationContext applicationContext = new GenericGroovyApplicationContext("daoFactory.groovy");
 

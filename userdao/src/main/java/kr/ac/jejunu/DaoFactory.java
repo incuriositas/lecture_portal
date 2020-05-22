@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import javax.sql.DataSource;
 import java.sql.Driver;
 
-@Configuration // Bean 을 정의해주는것
+@Configuration
 public class DaoFactory {
     @Value("${db.classname}")
     private String className;
@@ -20,7 +20,7 @@ public class DaoFactory {
     @Value("${db.password}")
     private String password;
 
-//    @Bean // spring 이 new 해주는 object instance
+//    @Bean
 //    public UserDao userDao() {
 //        return new UserDao(jdbcContext());
 //    }
