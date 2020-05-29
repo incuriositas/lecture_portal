@@ -2,7 +2,7 @@
 <%@ page import="org.springframework.context.annotation.AnnotationConfigApplicationContext" %>
 <%@ page import="kr.ac.jejunu.UserDao" %>
 <%@ page import="kr.ac.jejunu.User" %>
-<%@ page contentType="text/html; charsert=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%
     ApplicationContext applicationContext = new AnnotationConfigApplicationContext("kr.ac.jejunu");
     UserDao userDao = applicationContext.getBean("userDao", UserDao.class);
