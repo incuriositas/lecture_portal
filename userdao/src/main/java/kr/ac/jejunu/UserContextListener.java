@@ -2,8 +2,10 @@ package kr.ac.jejunu;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
-public class UserContextListenser implements ServletContextListener {
+@WebListener
+public class UserContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("************* context init **********");
